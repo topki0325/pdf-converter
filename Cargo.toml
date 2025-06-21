@@ -1,0 +1,61 @@
+[package]
+name = "pdf-converter"
+version = "0.1.0"
+edition = "2021"
+authors = ["topki <259901434@qq.com>"]
+description = "A simple and efficient library for converting images (JPG, PNG, GIF, BMP, WebP) to PDF documents. Commercial use permitted under MIT/Apache-2.0 license."
+license = "MIT OR Apache-2.0"
+keywords = ["pdf", "image", "converter", "jpg", "png"]
+categories = ["multimedia::images", "text-processing"]
+readme = "README.md"
+repository = "https://github.com/topki/pdf-converter"
+homepage = "https://github.com/topki/pdf-converter"
+documentation = "https://docs.rs/pdf-converter"
+exclude = [
+    "*.pdf",
+    "GITHUB_UPLOAD_GUIDE.md",
+    "PROJECT_STATUS.md",
+    "examples/sample_images/*.jpg",
+    "examples/sample_images/*.png",
+    "examples/sample_images/*.gif",
+    "examples/sample_images/*.bmp",
+    "examples/sample_images/*.webp",
+]
+
+[dependencies]
+# PDF generation
+printpdf = "0.7"
+# Image processing
+image = "0.24"
+# Logging
+log = "0.4"
+# Error handling
+thiserror = "1.0"
+
+[dev-dependencies]
+env_logger = "0.10"
+tempfile = "3.8"
+
+[[bin]]
+name = "simple_test"
+path = "src/bin/simple_test.rs"
+
+[[bin]]
+name = "test_pdf_converter"
+path = "src/bin/test_pdf_converter.rs"
+
+[[bin]]
+name = "quick_test"
+path = "src/bin/quick_test.rs"
+
+[[bin]]
+name = "comprehensive_test"
+path = "src/bin/comprehensive_test.rs"
+
+[[example]]
+name = "basic_usage"
+path = "examples/basic_usage.rs"
+
+[[example]]
+name = "batch_convert"
+path = "examples/batch_convert.rs"
